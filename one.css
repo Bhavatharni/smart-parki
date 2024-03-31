@@ -1,0 +1,16 @@
+.b1
+{
+    background-color: green;
+    color: white;
+    height: 200px;
+    width: 200px;
+    border: 5px solid black;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+}
+
+body
+{
+    background-image: url(loginimage.jpg);
+}
+

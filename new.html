@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThingSpeak Data Sender</title>
+<script>
+function sendData() {
+    var apiKey = "29GAJS42UMC1JSB9"; // Replace with your ThingSpeak API key
+    var fieldValue = document.getElementById("fieldValue").value;
+
+    // Construct the ThingSpeak update URL
+    var updateURL = "https://api.thingspeak.com/update?api_key=" + apiKey + "&field1=" + encodeURIComponent(fieldValue);
+
+    // Make a GET request to update the ThingSpeak field
+    fetch(updateURL)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        console.log('Data sent successfully:', data);
+        // You can add further actions here if needed
+    })
+    .catch(error => {
+        console.error('Error sending data to ThingSpeak:', error);
+    });
+}
+</script>
+</head>
+<body>
+    <h1>Send Data to ThingSpeak Field</h1>
+    <label for="fieldValue">Enter Field Value:</label>
+    <input type="number" id="fieldValue" required>
+    <button onclick="sendData()">Send Data</button>
+</body>
+</html>

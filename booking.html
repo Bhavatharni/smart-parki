@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Slot Booking</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Book Your Parking Slot</h1>
+        <form>
+            <label for="location">Name:</label>
+            <input type="text" id="location" name="location" placeholder="Name" required>
+
+            <label for="carNumber">Car Number:</label>
+            <input type="text" id="carNumber" name="carNumber" placeholder="Enter car number" required>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <button onclick="bookNow(event)" id="book" type="submit">Book Now</button>
+        </form>
+    </div>
+    <script>
+        function bookNow(event) {
+            event.preventDefault(); // Prevent form submission
+            var booked = false; // Default value
+
+            // Check if the button is clicked
+            if (event.target.id === 'book') {
+                booked = true; // Set to true if the button is clicked
+            }
+            localStorage.setItem('booked', booked); // Set the localStorage item
+            window.location.href = 'one.html'; // Redirect
+        }
+    </script>
+</body>
+</html>

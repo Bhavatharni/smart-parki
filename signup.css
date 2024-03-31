@@ -1,0 +1,28 @@
+div
+{
+    background-color: rgb(243, 240, 237);
+    width:max-content;
+    border: 5px solid  rgb(243, 240, 237);
+    padding: 10px;
+    margin-top: 20%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+.signup 
+{
+    text-align: center;
+}
+.bu
+{
+    margin-top: 10%;
+    position: relative;
+    top: 50%;
+    left: 35%;
+    background-color: rgb(207, 192, 197);
+    color: rgb(246, 2, 2);
+}
+body
+{
+    background-image: url(loginimage.jpg);
+}
